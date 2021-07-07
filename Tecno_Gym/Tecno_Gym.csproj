@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CDFCD7E-0141-484F-A8D6-DD85DB916741}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tecno_Gym</RootNamespace>
+    <AssemblyName>Tecno_Gym</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>academia.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\Includes\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\Includes\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.7\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aula\Aula.cs" />
+    <Compile Include="Aula\CadastrarAula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aula\CadastrarAula.Designer.cs">
+      <DependentUpon>CadastrarAula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aula\ListarAulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aula\ListarAulas.Designer.cs">
+      <DependentUpon>ListarAulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avaliacao_Fisica\AvaliacaoFisica.cs" />
+    <Compile Include="Avaliacao_Fisica\CadastroAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avaliacao_Fisica\CadastroAvaliacao.Designer.cs">
+      <DependentUpon>CadastroAvaliacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conf\ConfiguracaoGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conf\ConfiguracaoGeral.Designer.cs">
+      <DependentUpon>ConfiguracaoGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contas\InformacoesFluxo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contas\InformacoesFluxo.Designer.cs">
+      <DependentUpon>InformacoesFluxo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medida\CompararMedidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medida\CompararMedidas.Designer.cs">
+      <DependentUpon>CompararMedidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avaliacao_Fisica\ListarAvaliacoesFisicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avaliacao_Fisica\ListarAvaliacoesFisicas.Designer.cs">
+      <DependentUpon>ListarAvaliacoesFisicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteTurma\ClienteTurma.cs" />
+    <Compile Include="Contas\CadastrarContaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contas\CadastrarContaPagar.Designer.cs">
+      <DependentUpon>CadastrarContaPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contas\CadastrarContaReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contas\CadastrarContaReceber.Designer.cs">
+      <DependentUpon>CadastrarContaReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contas\Conta.cs" />
+    <Compile Include="Contas\ContaPagar.cs" />
+    <Compile Include="Contas\ContaReceber.cs" />
+    <Compile Include="Contas\ListarContasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contas\ListarContasPagar.Designer.cs">
+      <DependentUpon>ListarContasPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contas\ListarContasReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contas\ListarContasReceber.Designer.cs">
+      <DependentUpon>ListarContasReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\ListarMatriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\ListarMatriculas.Designer.cs">
+      <DependentUpon>ListarMatriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\Matricula.cs" />
+    <Compile Include="Matricula\RealizarMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\RealizarMatricula.Designer.cs">
+      <DependentUpon>RealizarMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medida\CadastrarMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medida\CadastrarMedida.Designer.cs">
+      <DependentUpon>CadastrarMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medida\ListarMedidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medida\ListarMedidas.Designer.cs">
+      <DependentUpon>ListarMedidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medida\Medida.cs" />
+    <Compile Include="Mensalidade\CadastrarMensalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\CadastrarMensalidade.Designer.cs">
+      <DependentUpon>CadastrarMensalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\ListarMensalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\ListarMensalidades.Designer.cs">
+      <DependentUpon>ListarMensalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Mensalidade.cs" />
+    <Compile Include="Pedido\CadastrarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\CadastrarCategoria.Designer.cs">
+      <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\CadastrarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\CadastrarFornecedor.Designer.cs">
+      <DependentUpon>CadastrarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\CadastrarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\CadastrarProduto.Designer.cs">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Categoria.cs" />
+    <Compile Include="Pedido\Fornecedor.cs" />
+    <Compile Include="Pedido\ItemPedido.cs" />
+    <Compile Include="Pedido\ListarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\ListarCategorias.Designer.cs">
+      <DependentUpon>ListarCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\ListarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\ListarPedidos.Designer.cs">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\ListarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\ListarProdutos.Designer.cs">
+      <DependentUpon>ListarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\ListarFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\ListarFornecedores.Designer.cs">
+      <DependentUpon>ListarFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Pedido.cs" />
+    <Compile Include="Pedido\Produto.cs" />
+    <Compile Include="Pedido\RealizarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\RealizarPedido.Designer.cs">
+      <DependentUpon>RealizarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoas\CadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoas\CadastrarCliente.Designer.cs">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoas\CadastrarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoas\CadastrarFuncionario.Designer.cs">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoas\Cliente.cs" />
+    <Compile Include="Pessoas\Funcionario.cs" />
+    <Compile Include="Pessoas\ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoas\ListarClientes.Designer.cs">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoas\ListarFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoas\ListarFuncionarios.Designer.cs">
+      <DependentUpon>ListarFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoas\Pessoa.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\RelatorioCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCliente.Designer.cs">
+      <DependentUpon>RelatorioCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAulas.Designer.cs">
+      <DependentUpon>RelatorioAulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAvaliacoesFisicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAvaliacoesFisicas.Designer.cs">
+      <DependentUpon>RelatorioAvaliacoesFisicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFluxoFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFluxoFinanceiro.Designer.cs">
+      <DependentUpon>RelatorioFluxoFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFuncionarios.Designer.cs">
+      <DependentUpon>RelatorioFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarCategoria.Designer.cs">
+      <DependentUpon>SelecionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarCliente.Designer.cs">
+      <DependentUpon>SelecionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarFornecedor.Designer.cs">
+      <DependentUpon>SelecionarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarFuncionario.Designer.cs">
+      <DependentUpon>SelecionarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarProduto.Designer.cs">
+      <DependentUpon>SelecionarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarTurma.Designer.cs">
+      <DependentUpon>SelecionarTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Turma\CadastroTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Turma\CadastroTurma.Designer.cs">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Turma\ListarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Turma\ListarTurma.Designer.cs">
+      <DependentUpon>ListarTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Turma\Turma.cs" />
+    <EmbeddedResource Include="Aula\CadastrarAula.resx">
+      <DependentUpon>CadastrarAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aula\ListarAulas.resx">
+      <DependentUpon>ListarAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avaliacao_Fisica\CadastroAvaliacao.resx">
+      <DependentUpon>CadastroAvaliacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conf\ConfiguracaoGeral.resx">
+      <DependentUpon>ConfiguracaoGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas\InformacoesFluxo.resx">
+      <DependentUpon>InformacoesFluxo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medida\CompararMedidas.resx">
+      <DependentUpon>CompararMedidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avaliacao_Fisica\ListarAvaliacoesFisicas.resx">
+      <DependentUpon>ListarAvaliacoesFisicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas\CadastrarContaPagar.resx">
+      <DependentUpon>CadastrarContaPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas\CadastrarContaReceber.resx">
+      <DependentUpon>CadastrarContaReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas\ListarContasPagar.resx">
+      <DependentUpon>ListarContasPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas\ListarContasReceber.resx">
+      <DependentUpon>ListarContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\ListarMatriculas.resx">
+      <DependentUpon>ListarMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\RealizarMatricula.resx">
+      <DependentUpon>RealizarMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medida\CadastrarMedida.resx">
+      <DependentUpon>CadastrarMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medida\ListarMedidas.resx">
+      <DependentUpon>ListarMedidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\CadastrarMensalidade.resx">
+      <DependentUpon>CadastrarMensalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\ListarMensalidades.resx">
+      <DependentUpon>ListarMensalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\CadastrarCategoria.resx">
+      <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\CadastrarFornecedor.resx">
+      <DependentUpon>CadastrarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\CadastrarProduto.resx">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ListarCategorias.resx">
+      <DependentUpon>ListarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ListarPedidos.resx">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ListarProdutos.resx">
+      <DependentUpon>ListarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ListarFornecedores.resx">
+      <DependentUpon>ListarFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\RealizarPedido.resx">
+      <DependentUpon>RealizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoas\CadastrarCliente.resx">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoas\CadastrarFuncionario.resx">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoas\ListarClientes.resx">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoas\ListarFuncionarios.resx">
+      <DependentUpon>ListarFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorios\RelatorioCliente.resx">
+      <DependentUpon>RelatorioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioAulas.resx">
+      <DependentUpon>RelatorioAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioAvaliacoesFisicas.resx">
+      <DependentUpon>RelatorioAvaliacoesFisicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioFluxoFinanceiro.resx">
+      <DependentUpon>RelatorioFluxoFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioFuncionarios.resx">
+      <DependentUpon>RelatorioFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarCategoria.resx">
+      <DependentUpon>SelecionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarCliente.resx">
+      <DependentUpon>SelecionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarFornecedor.resx">
+      <DependentUpon>SelecionarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarFuncionario.resx">
+      <DependentUpon>SelecionarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarProduto.resx">
+      <DependentUpon>SelecionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarTurma.resx">
+      <DependentUpon>SelecionarTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turma\CadastroTurma.resx">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turma\ListarTurma.resx">
+      <DependentUpon>ListarTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\academiaes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="academia.ico" />
+    <None Include="Resources\estoque %281%29.png" />
+    <None Include="Resources\estoque %282%29.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\LogoSmall.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\pessoa1.png" />
+    <None Include="Resources\pessoa.png" />
+    <None Include="Resources\cadastro %283%29.png" />
+    <None Include="Resources\relatorio-de-saude.png" />
+    <None Include="Resources\configuracao %284%29.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\cadastro %282%29.png" />
+    <None Include="Resources\cadastro %281%29.png" />
+    <None Include="Resources\academia.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
