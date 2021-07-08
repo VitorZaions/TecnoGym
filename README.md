@@ -1,6 +1,15 @@
 # TecnoGym
 Software para gestão de academia (Engenharia De Software III)
 
+## Escopo
+
+Este software está dividido em quatro módulos, segue informações sobre cada um dos módulos:
+Cadastros: Nesta parte, se encontram as ações de cadastrar, editar e excluir aulas, avaliações físicas, categorias, clientes, fornecedores, funcionários, matrículas, medidas, produtos e turmas.
+Estoque: Espaço reservado para realização dos pedidos.
+Financeiro: Contas a pagar, contas a receber, informações de fluxo de caixa e controle de mensalidades.
+Relatórios: Geração de Relatórios.
+
+
 ## Tecnologias
 
 Para o desenvolvimento da aplicação, foi utilizado o .NET Framework 4.7 com a linguagem de programação C#. Para a interface gráfica, o Windows Forms. Assim como para armazenar os dados, foi optado pelo Banco de Dados PostgreSQL.
